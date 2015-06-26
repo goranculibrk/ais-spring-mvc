@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - freelancepm_db@localhost" uuid="6eab2ae4-73e6-4cc1-b48b-0614096d63db">
+      <secret-storage>master_key</secret-storage>
+      <user-name>gox</user-name>
+      <schema-pattern>freelancepm_db.*</schema-pattern>
+      <default-schemas>freelancepm_db.*</default-schemas>
+    </data-source>
+  </component>
+</project>

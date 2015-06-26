@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - freelancepm_db@localhost" uuid="6eab2ae4-73e6-4cc1-b48b-0614096d63db">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="freelancepm_db"/>
+    <table name="clients" schema="" catalog="freelancepm_db" type="TABLE">
+      <column name="idCLIENTS" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="CL_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CL_PHONE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_EMAIL" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CL_WEBSITE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_STATUS" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_ADDRESS" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_COUNTRY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_CURRENCY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="CL_DATESTARTED" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="idCLIENTS"/>
+      <exported-key name="fk_PROJECTS_CLIENTS" table="projects" schema="" catalog="freelancepm_db" columns="CLIENTS_idCLIENTS"/>
+      <index name="CL_NAME_UNIQUE" unique="true" columns="CL_NAME"/>
+      <index name="idCLIENTS_UNIQUE" unique="true" columns="idCLIENTS"/>
+    </table>
+    <table name="projects" schema="" catalog="freelancepm_db" type="TABLE">
+      <column name="idPROJECTS" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PROJ_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="PROJ_DESCRIPTION" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PROJ_STATUS" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PROJ_PRIORITY" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PROJ_DATESTARTED" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="PROJ_DATEEND" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="PROJ_PRICE" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="CLIENTS_idCLIENTS" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idPROJECTS,CLIENTS_idCLIENTS"/>
+      <foreign-key name="fk_PROJECTS_CLIENTS" columns="CLIENTS_idCLIENTS" ref-table="clients" ref-schema="" ref-catalog="freelancepm_db" ref-columns="idCLIENTS" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="idPROJECTS_UNIQUE" unique="true" columns="idPROJECTS"/>
+      <index name="fk_PROJECTS_CLIENTS_idx" unique="false" columns="CLIENTS_idCLIENTS"/>
+    </table>
+  </data-source>
+</component>

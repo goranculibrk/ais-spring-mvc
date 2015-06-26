@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="rs.ftn.ais.model.Projects" table="projects" schema="" catalog="freelancepm_db">
+        <composite-id mapped="true" class="rs.ftn.ais.model.ProjectsPK">
+            <key-property name="idProjects">
+                <column name="idPROJECTS" sql-type="int" not-null="true"/>
+            </key-property>
+            <key-property name="clientsIdClients">
+                <column name="CLIENTS_idCLIENTS" sql-type="int" not-null="true"/>
+            </key-property>
+        </composite-id>
+        <property name="projName">
+            <column name="PROJ_NAME" sql-type="varchar" length="45" not-null="true"/>
+        </property>
+        <property name="projDescription">
+            <column name="PROJ_DESCRIPTION" sql-type="varchar" length="45"/>
+        </property>
+        <property name="projStatus">
+            <column name="PROJ_STATUS" sql-type="varchar" length="45"/>
+        </property>
+        <property name="projPriority">
+            <column name="PROJ_PRIORITY" sql-type="varchar" length="45"/>
+        </property>
+        <property name="projDatestarted">
+            <column name="PROJ_DATESTARTED" sql-type="date"/>
+        </property>
+        <property name="projDateend">
+            <column name="PROJ_DATEEND" sql-type="date"/>
+        </property>
+        <property name="projPrice">
+            <column name="PROJ_PRICE" sql-type="varchar" length="45" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

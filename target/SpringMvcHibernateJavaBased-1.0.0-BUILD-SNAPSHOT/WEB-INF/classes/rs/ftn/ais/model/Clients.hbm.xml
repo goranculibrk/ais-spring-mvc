@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="rs.ftn.ais.model.Clients" table="clients" schema="" catalog="freelancepm_db">
+        <id name="idClients">
+            <column name="idCLIENTS" sql-type="int" not-null="true"/>
+        </id>
+        <property name="clName">
+            <column name="CL_NAME" sql-type="varchar" length="45" not-null="true"/>
+        </property>
+        <property name="clPhone">
+            <column name="CL_PHONE" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clEmail">
+            <column name="CL_EMAIL" sql-type="varchar" length="45" not-null="true"/>
+        </property>
+        <property name="clWebsite">
+            <column name="CL_WEBSITE" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clStatus">
+            <column name="CL_STATUS" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clAddress">
+            <column name="CL_ADDRESS" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clCountry">
+            <column name="CL_COUNTRY" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clCurrency">
+            <column name="CL_CURRENCY" sql-type="varchar" length="45"/>
+        </property>
+        <property name="clDatestarted">
+            <column name="CL_DATESTARTED" sql-type="date"/>
+        </property>
+    </class>
+</hibernate-mapping>
